@@ -20,29 +20,13 @@ with open(filepath, encoding='utf-8') as csvfile:
     reader_for_csv = csv.reader(csvfile)
     # Loop through all the datas we collect 
     for row in csvreader:
-        print(row)
+        #print(row)
         # Calculate total no. of months for the entire period
         months += 1 
         # calculate net amount over entire period
         revenue.append(int(row[1]))   
     for i in range(1,len(revenue)):
         avgchange.append(revenue[i] - revenue[i-1])
-    print("Total Months:" +str(months))
+    print("Total Months:" + str(months))
     print("Total_net_amount:" + str(sum(revenue)))
-    print("Average Change:" + str(sum(avgchange))/str(months-1))
-
-
-    
-
-
-
-
-
-# Printing required final output
-#print("Financial Analysis")
-#print("----------------------------------")
-#print("Total Months:"    )
-#print("Total Net Amount:" $  )
-#print("Average Change:"$   )
-#print("Greatest Increase in Profits:"  $  )
-#print("Greatest Decrease in Profits:"  $  )
+    print("Average Change:" + str(sum(avgchange)/(str(months)-1)))
