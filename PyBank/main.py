@@ -27,6 +27,8 @@ with open(filepath, encoding='utf-8') as csvfile:
         revenue.append(int(row[1]))   
     for i in range(1,len(revenue)):
         avgchange.append(revenue[i] - revenue[i-1])
+    print("Financial Analysis")
+    print("----------------------------------")
     print("Total Months:" + str(months))
     print("Total_net_amount:" + str(sum(revenue)))
     print("Average Change:" + str(sum(avgchange)/(str(months)-1)))
