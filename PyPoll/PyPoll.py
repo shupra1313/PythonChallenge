@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 #set path
-filepath = Path("C:\\Users\\Subha\\repos\\python-challenge\\PyPoll\\election_data.csv")
+filepath = Path("C:\\Users\\Subha\\Master Repo\\Working Class Repo\\python-challenge\\PyPoll\\election_data.csv")
 print('Election Results\n')
 print('---------------------------\n')
 #open the file
@@ -44,13 +44,16 @@ print("Winning Votes: " + str(winning_votes) +'\n')
 print('----------------------------\n')
 
 #set path for output file
-filepath_1 = ("C:\\Users\\Subha\\repos\\python-challenge\\PyPoll\\output_pypoll.txt")
+filepath_1 = ("C:\\Users\\Subha\\Master Repo\\Working Class Repo\\python-challenge\\PyPoll\\output_pypoll.txt")
 # opens the output destination in write mode and prints the summary
 with open(filepath_1, 'w+') as writefile:
     csvwriter = csv.writer(writefile, delimiter=",")
     writefile.writelines('Election Results\n')
     writefile.writelines('----------------------------\n')
-    writefile.writelines(str(candidates) + ':' + str(round(percentage,3)) + ("%") + '   (' + str(votes) + ')' '\n')
+    for candidates in candidates_dict:
+        votes = candidates_dict.get(candidates)
+        percentage = (votes / total_votes)*100
+        writefile.writelines(str(candidates) + ':' + str(round(percentage,3)) + ("%") + '   (' + str(votes) + ')' '\n')
     writefile.writelines("Total Votes: " + str(total_votes) + '\n')
     writefile.writelines('----------------------------\n')
     writefile.writelines("Winner: " + str(winner) +'\n')
