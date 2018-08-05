@@ -44,7 +44,7 @@ print("Winning Votes: " + str(winning_votes) +'\n')
 print('----------------------------\n')
 
 #set path for output file
-filepath_1 = ("C:\\Users\\Subha\\repos\\python-challenge\\PyBank\\output_pypoll.txt")
+filepath_1 = ("C:\\Users\\Subha\\repos\\python-challenge\\PyPoll\\output_pypoll.txt")
 # opens the output destination in write mode and prints the summary
 with open(filepath_1, 'w+') as writefile:
     csvwriter = csv.writer(writefile, delimiter=",")
