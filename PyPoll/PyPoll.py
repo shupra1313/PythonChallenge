@@ -42,3 +42,17 @@ print('----------------------------\n')
 print("Winner: " + str(winner) +'\n')
 print("Winning Votes: " + str(winning_votes) +'\n')
 print('----------------------------\n')
+
+#set path for output file
+filepath_1 = ("C:\\Users\\Subha\\repos\\python-challenge\\PyBank\\output_pypoll.txt")
+# opens the output destination in write mode and prints the summary
+with open(filepath_1, 'w+') as writefile:
+    csvwriter = csv.writer(writefile, delimiter=",")
+    writefile.writelines('Election Results\n')
+    writefile.writelines('----------------------------\n')
+    writefile.writelines(str(candidates) + ':' + str(round(percentage,3)) + ("%") + '   (' + str(votes) + ')' '\n')
+    writefile.writelines("Total Votes: " + str(total_votes) + '\n')
+    writefile.writelines('----------------------------\n')
+    writefile.writelines("Winner: " + str(winner) +'\n')
+    writefile.writelines("Winning Votes: " + str(winning_votes) +'\n')
+    writefile.writelines('----------------------------\n')
