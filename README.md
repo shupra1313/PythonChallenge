@@ -1,2 +1,2 @@
-# python-challenge
+Python Challenge
 repository for python
